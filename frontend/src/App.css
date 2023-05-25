@@ -1,0 +1,25 @@
+
+.first {
+    background-color: black;
+}
+video {
+    height:70vh;
+    display: inline;
+}
+
+h1 {
+    font-size:30px;
+    display:inline;
+    color:white
+}
+.print {
+    position:relative;
+    left:20%;
+}
+.hello {
+    position:absolute;
+    top:20%;
+    right:20%;
+    display:inline;
+    background-color: black;
+}
