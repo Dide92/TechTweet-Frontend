@@ -1,22 +1,38 @@
 import axios from 'axios';
-import React from 'react'
+import React from 'react';
 import './App.css';
-import Tweet from "./components/Tweet"
+import Tweet from "./components/Tweet";
 
 function App() {
   const [tweets, setTweets] = React.useState([]);
 
-  React.useEffect(()=> {
-    const fetchTweet = async ()=> {
-      const res = await axios.get('/tweets')
-      // console.log(res)  //data fetched
-      setTweets(res.data)
+  const fetchTweets = async () => {
+    try {
+      const res = await axios.get('/tweets');
+      setTweets(res.data);
+    } catch (error) {
+      console.error(error);
     }
-    fetchTweet()
-  },[])
+  };
+
+  const handleDelete = async (id) => {
+    // console.log(id)
+    try {
+      await axios.delete(`/tweets/${id}`);
+      fetchTweets();
+    } catch (error) {
+      console.error(error);
+    }
+
+  };
+React.useEffect(() => {
+    fetchTweets();
+  }, []);
+
+
   return (
     <div className="App">
-      <Tweet tweets={tweets} />
+      <Tweet tweets={tweets} handleDelete={handleDelete} />
     </div>
   );
 }
