@@ -25,6 +25,17 @@ function App() {
     }
 
   };
+
+  const handleUpdate = async (updatedTweet) => {
+    // console.log(id)
+    try {
+      await axios.put(`/tweets/${updatedTweet._id}`, updatedTweet);
+      fetchTweets();
+    } catch (error) {
+      console.error(error);
+    }
+
+  };
 React.useEffect(() => {
     fetchTweets();
   }, []);
@@ -32,7 +43,7 @@ React.useEffect(() => {
 
   return (
     <div className="App">
-      <Tweet tweets={tweets} handleDelete={handleDelete} />
+      <Tweet tweets={tweets} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
     </div>
   );
 }
