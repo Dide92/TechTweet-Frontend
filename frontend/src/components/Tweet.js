@@ -24,9 +24,9 @@ const handleEdit = (tweet) => {
 };
 
   return (
-    <div className="tweets">
+    <div className="grid-container grid-container--fit">
     {tweets.map((tweet) => (
-      <div key={tweet._id}>
+      <div key={tweet._id} >
         {editTweet && editTweet._id === tweet._id ? (
           <form onSubmit={(e) => {
             e.preventDefault();
@@ -80,6 +80,7 @@ const handleEdit = (tweet) => {
           </form>
         ) : (
           <>
+          <div className="grid-element">
             <p>{tweet.title}</p>
             <p>{tweet.author}</p>
             <img src={tweet.image} alt="Tweet" />
@@ -88,6 +89,7 @@ const handleEdit = (tweet) => {
             <p>{tweet.github}</p>
             <button onClick={() => deleteTweet(tweet._id)}>DELETE</button>
             <button onClick={() => handleEdit(tweet)}>EDIT</button>
+          </div>
           </>
         )}
       </div>

@@ -4,6 +4,8 @@ import './App.css';
 import NewTweet from './components/NewTweet';
 import Tweet from "./components/Tweet";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
+
 
 function App() {
   const [tweets, setTweets] = React.useState([]);
@@ -54,8 +56,9 @@ React.useEffect(() => {
   return (
     <div className="App">
       <Home />
-      <NewTweet createTweet={createTweet} />
       <Tweet tweets={tweets} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+      <NewTweet createTweet={createTweet} />
+      <Footer />
     </div>
   );
 }

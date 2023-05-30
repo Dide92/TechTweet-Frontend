@@ -34,7 +34,9 @@ function NewTweet({ createTweet }) {
 
   return (
     <div>
-      <h2>Add New Tweet</h2>
+      <section className='new'>
+      <h2>Publish a Tweet</h2>
+      <div className='new-container'>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -42,28 +44,31 @@ function NewTweet({ createTweet }) {
           value={tweetData.title}
           placeholder="Title"
           onChange={handleChange}
-        />
+        /><br></br>
         <input
           type="text"
           name="author"
           value={tweetData.author}
           placeholder="Author"
           onChange={handleChange}
-        />
+        /><br></br>
         <input
           type="text"
           name="image"
           value={tweetData.image}
           placeholder="Image URL"
           onChange={handleChange}
-        />
+        /><br></br>
         <input
-          type="text"
+          type="textarea"
+          className='textarea'
           name="description"
+          rows="10" 
+          cols="50"
           value={tweetData.description}
           placeholder="Description"
           onChange={handleChange}
-        />
+        /><br></br>
         <input
           type="text"
           name="linkedin"
@@ -77,9 +82,11 @@ function NewTweet({ createTweet }) {
           value={tweetData.github}
           placeholder="GitHub URL"
           onChange={handleChange}
-        />
+        /><br></br>
         <button type="submit">Add Tweet</button>
       </form>
+      </div>
+      </section>
     </div>
   );
 }
