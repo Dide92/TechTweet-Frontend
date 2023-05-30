@@ -4,7 +4,11 @@ import './App.css';
 import NewTweet from './components/NewTweet';
 import Tweet from "./components/Tweet";
 import Home from "./pages/Home";
+import Tweets from "./pages/Tweets";
+import News from "./pages/News";
 import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+
 
 
 function App() {
@@ -55,6 +59,7 @@ React.useEffect(() => {
 
   return (
     <div className="App">
+      <Nav />
       <Home />
       <Tweet tweets={tweets} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
       <NewTweet createTweet={createTweet} />

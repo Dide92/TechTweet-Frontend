@@ -6,7 +6,7 @@ function Home() {
     <div className="home">
    
         <section className='first'>
-            <div>
+            <div className='video'>
             <video autoPlay loop muted playsInline>
             <source src="/images/matrix1.mp4" />
             </video>
