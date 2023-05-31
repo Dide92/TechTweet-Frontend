@@ -5,14 +5,16 @@ import NewTweet from './components/NewTweet';
 import Tweet from "./components/Tweet";
 import Home from "./pages/Home";
 import Tweets from "./pages/Tweets";
-import News from "./pages/News";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
-
+import News from "./components/News";
+import TweetDetail from './components/TweetDetail';
+import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 
 
 function App() {
   const [tweets, setTweets] = React.useState([]);
+
   const fetchTweets = async () => {
     try {
       const res = await axios.get('/tweets');
@@ -52,19 +54,28 @@ function App() {
     }
 
   };
+
+
+  
 React.useEffect(() => {
     fetchTweets();
   }, []);
 
 
   return (
-    <div className="App">
+ 
+      <div className="App">
+    
       <Nav />
-      <Home />
-      <Tweet tweets={tweets} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
-      <NewTweet createTweet={createTweet} />
+      <Routes>
+          <Route exact path="/" element={<Home/>} />  
+          <Route exact path="/tweets" element={<Tweet tweets={tweets} handleDelete={handleDelete} handleUpdate={handleUpdate}/>} />
+          <Route exact path="/news" element={<News />} />
+      </Routes>
       <Footer />
-    </div>
+
+      </div>
+
   );
 }
 

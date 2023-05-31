@@ -1,42 +1,42 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import News from '../components/News';
+import NewTweet from '../components/NewTweet';
+import Tweet from '../components/Tweet';
+import axios from 'axios';
 
 function Home() {
+  const [tweets, setTweets] = useState([]);
+
+  useEffect(() => {
+    fetchTweets();
+  }, []);
+
+  const fetchTweets = async () => {
+    try {
+      const res = await axios.get('/tweets');
+      setTweets(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="home">
-   
-        <section className='first'>
-            <div className='video'>
-            <video autoPlay loop muted playsInline>
+      <section className='first'>
+        <div className='video'>
+          <video autoPlay loop muted playsInline>
             <source src="/images/matrix1.mp4" />
-            </video>
-            </div>
-            <div className='hello'>
-            <h1 className='first'>def hello_world(): print("Welcome to Tech Tweet") hello_world()</h1> 
-            </div>
-        </section>
-        <section className='news'>
-        <div className="grid-container grid-container--fit">
-          <div className="grid-element">
-            <h3>Bootcamp 1</h3>
-            <p> cjdnvijdnv vdfuivbndfijvnk diuvdb vkdjf vosdfnvdfoiv vdfsov vosdfvdjksnnvkjdf vdfv dfvodfnvdkjvnodfkv fvdfovnsdfvkfdnvkdnvd vsdonvkjdfnvkvn  vsfkjnvksnvfsv dfvn vsdfv vsdv fv  vsvsdfvdvdf vs vsbv svdf</p>
-          </div>
-          <div className="grid-element">
-            <h3>Bootcamp 2</h3>
-            <p> cjdnvijdnv vdfuivbndfijvnk diuvdb vkdjf vosdfnvdfoiv vdfsov vosdfvdjksnnvkjdf vdfv dfvodfnvdkjvnodfkv fvdfovnsdfvkfdnvkdnvd vsdonvkjdfnvkvn  vsfkjnvksnvfsv dfvn vsdfv vsdv fv  vsvsdfvdvdf vs vsbv svdf</p>
-          </div>
-          <div className="grid-element">
-            <h3>Bootcamp 3</h3>
-            <p> cjdnvijdnv vdfuivbndfijvnk diuvdb vkdjf vosdfnvdfoiv vdfsov vosdfvdjksnnvkjdf vdfv dfvodfnvdkjvnodfkv fvdfovnsdfvkfdnvkdnvd vsdonvkjdfnvkvn  vsfkjnvksnvfsv dfvn vsdfv vsdv fv  vsvsdfvdvdf vs vsbv svdf</p>
-          </div>
-          <div className="grid-element">
-            <h3>Bootcamp 4</h3>
-            <p> cjdnvijdnv vdfuivbndfijvnk diuvdb vkdjf vosdfnvdfoiv vdfsov vosdfvdjksnnvkjdf vdfv dfvodfnvdkjvnodfkv fvdfovnsdfvkfdnvkdnvd vsdonvkjdfnvkvn  vsfkjnvksnvfsv dfvn vsdfv vsdv fv  vsvsdfvdvdf vs vsbv svdf</p>
-          </div>
+          </video>
         </div>
-        </section>
-       
-    
+        <div className='hello'>
+          <h1 className='first'>def hello_world(): print("Welcome to Tech Tweet") hello_world()</h1>
+        </div>
+      </section>
+      <section>
+        <News />
+        <Tweet tweets={tweets} />
+        <NewTweet />
+      </section>
     </div>
   );
 }

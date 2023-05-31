@@ -1,7 +1,8 @@
 import React from 'react';
+import NewTweet from '../components/NewTweet';
 
 
-function Tweet({ tweets, handleDelete, handleUpdate }) {
+function Tweet({ tweets, handleDelete, handleUpdate, onTweetClick }) {
     const [editTweet, setEditTweet] = React.useState(null);
 
   const deleteTweet = async (_id) => {
@@ -24,6 +25,10 @@ const handleEdit = (tweet) => {
 };
 
   return (
+    <div>
+      <section>
+        <NewTweet />
+      </section>
     <div className="grid-container grid-container--fit">
     {tweets.map((tweet) => (
       <div key={tweet._id} >
@@ -81,7 +86,7 @@ const handleEdit = (tweet) => {
         ) : (
           <>
           <div className="grid-element">
-            <p>{tweet.title}</p>
+            <p onClick={() => onTweetClick(tweet)}>{tweet.title}</p>
             <p>{tweet.author}</p>
             <img src={tweet.image} alt="Tweet" />
             <p>{tweet.description}</p>
@@ -90,12 +95,15 @@ const handleEdit = (tweet) => {
             <button onClick={() => deleteTweet(tweet._id)}>DELETE</button>
             <button onClick={() => handleEdit(tweet)}>EDIT</button>
           </div>
+          
           </>
         )}
+        
       </div>
     ))}
+
   </div>
-  
+  </div>
   );
 }
 
