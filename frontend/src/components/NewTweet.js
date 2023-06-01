@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function NewTweet({ createTweet }) {
   const [tweetData, setTweetData] = useState({
     title: '',

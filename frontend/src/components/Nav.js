@@ -7,13 +7,13 @@ function Nav() {
       <section className="navbar">
         <ul>
           <li>
-            <Link to="/">.home</Link>
+            <Link className='navtext' to="/">.home</Link>
           </li>
           <li>
-            <Link to="/news">.news</Link>
+            <Link className='navtext' to="/news">.news</Link>
           </li>
           <li>
-            <Link to="/tweets">.tweets</Link>
+            <Link className='navtext' to="/tweets">.tweets</Link>
           </li>
           <li>
             {/* <Link to="/contact">Contact</Link> */}

@@ -14,8 +14,13 @@ li {
   text-align: center;
   padding:3%;
   display:inline;
-  text-decoration: none;
+
   list-style: none;
+  color:black;
+}
+.navtext{
+  text-decoration: none;
+  color:black;
 }
 
 .first {

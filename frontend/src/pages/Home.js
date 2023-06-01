@@ -34,8 +34,7 @@ function Home() {
       </section>
       <section>
         <News />
-        <Tweet tweets={tweets} />
-        <NewTweet />
+       
       </section>
     </div>
   );
