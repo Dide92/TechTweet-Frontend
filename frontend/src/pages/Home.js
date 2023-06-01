@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import News from '../components/News';
-import NewTweet from '../components/NewTweet';
-import Tweet from '../components/Tweet';
 import axios from 'axios';
 
 function Home() {

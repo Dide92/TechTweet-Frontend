@@ -35,7 +35,7 @@ function Tweet({ tweets, handleDelete, handleUpdate }) {
           ) : (
             <div className="grid-element">
               <Link to={`/tweet/${tweet._id}`}>{tweet.title}</Link>
-              <p>{tweet.author}</p>
+              <p>{tweet.username}</p>
               <img src={tweet.image} alt="Tweet" />
               <p>{tweet.description}</p>
               <p>{tweet.linkedin}</p>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 function NewTweet({ createTweet }) {
   const [tweetData, setTweetData] = useState({
     title: '',
-    author: '',
+    username: '',
     image: '',
     description: '',
     linkedin: '',
@@ -21,7 +21,7 @@ function NewTweet({ createTweet }) {
       await createTweet(tweetData);
       setTweetData({
         title: '',
-        author: '',
+        username: '',
         image: '',
         description: '',
         linkedin: '',
@@ -47,9 +47,9 @@ function NewTweet({ createTweet }) {
         /><br></br>
         <input
           type="text"
-          name="author"
-          value={tweetData.author}
-          placeholder="Author"
+          name="username"
+          value={tweetData.username}
+          placeholder="Username"
           onChange={handleChange}
         /><br></br>
         <input

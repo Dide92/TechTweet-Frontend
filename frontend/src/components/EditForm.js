@@ -32,12 +32,12 @@ function EditForm({ tweets, handleUpdate }) {
           value={editTweet.title}
           onChange={handleChange}
         />
-        <label htmlFor="author">Author:</label>
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
-          id="author"
-          name="author"
-          value={editTweet.author}
+          id="username"
+          name="username"
+          value={editTweet.username}
           onChange={handleChange}
         />
         <label htmlFor="image">Image URL:</label>

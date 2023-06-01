@@ -20,7 +20,7 @@ function TweetDetail({ tweets, deleteTweet }) {
   return (
     <div key={tweet?._id}>
       <p>{tweet?.title}</p>
-      <p>{tweet?.author}</p>
+      <p>{tweet?.username}</p>
       <img src={tweet?.image} alt="Tweet" />
       <p>{tweet?.description}</p>
       <p>{tweet?.linkedin}</p>
