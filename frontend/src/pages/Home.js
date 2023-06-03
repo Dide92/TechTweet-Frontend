@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import News from '../components/News';
 import axios from 'axios';
+import Logo from "../images/logo.png"
 
 function Home() {
   const [tweets, setTweets] = useState([]);
@@ -21,13 +22,16 @@ function Home() {
   return (
     <div className="home">
       <section className='first'>
-        <div className='video'>
-          <video autoPlay loop muted playsInline>
+        <div className='title'>
+          <h1 className='tech'>Tech</h1>
+          <h1 className='tweet'>Tweet</h1>
+          <img className='logo'src={Logo}/>
+          {/* <video autoPlay loop muted playsInline>
             <source src="/images/matrix1.mp4" />
-          </video>
-        </div>
+          </video> */}
+        </div> 
         <div className='hello'>
-          <h1 className='first'>def hello_world(): print("Welcome to Tech Tweet") hello_world()</h1>
+          {/* <h1 className='first'>def hello_world(): print("Welcome to Tech Tweet") hello_world()</h1> */}
         </div>
       </section>
       <section>

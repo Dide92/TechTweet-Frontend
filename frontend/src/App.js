@@ -1,22 +1,24 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import NewTweet from './components/NewTweet';
 import Tweet from "./components/Tweet";
 import Home from "./pages/Home";
-import Setting from "./pages/Setting";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+// import Setting from "./pages/Setting";
+// import Login from "./pages/Login";
+// import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import News from "./components/News";
 import TweetDetail from './components/TweetDetail';
 import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 import EditForm from './components/EditForm';
+// import { Context } from "./context/Context";
+
 
 
 function App() {
-  const user = false;
+  // const { user } = useContext(Context);
   const [tweets, setTweets] = React.useState([]);
 
   const fetchTweets = async () => {
@@ -72,15 +74,15 @@ React.useEffect(() => {
     
       <Nav />
       <Routes>
-          <Route exact path="/" element={<><Home /><NewTweet createTweet={createTweet}/><Tweet tweets={tweets} createTweet={createTweet} handleDelete={deleteTweet} handleUpdate={updateTweet}/></>} /> 
-          <Route exact path="/new" element={user ? <NewTweet createTweet={createTweet}/> : <Register />} />
-          <Route exact path="/tweets" element={<Tweet tweets={tweets} createTweet={createTweet} handleDelete={deleteTweet} handleUpdate={updateTweet}/> } />
+      <Route exact path="/" element={<><Home /><Tweet tweets={tweets} handleDelete={deleteTweet} handleUpdate={updateTweet} /></>} />
+      <Route exact path="/new" element={<NewTweet createTweet={createTweet}/>} />
+          <Route exact path="/tweets" element={<Tweet tweets={tweets} createTweet={createTweet} handleDelete={deleteTweet} handleUpdate={updateTweet} /> } />
           <Route exact path="/news" element={<News />} />
-          <Route exact path="/tweet/:id" element={<TweetDetail tweets={tweets} deleteTweet={deleteTweet}/>} />
+          <Route exact path="/tweet/:id" element={<TweetDetail tweets={tweets} handleDelete={deleteTweet}/>} />
           <Route exact path="/tweets/:id/edit" element={<EditForm tweets={tweets} handleUpdate={updateTweet} />}/>      
-          <Route exact path="/setting" element={user ? <Setting /> : <Register />} />
+          {/* <Route exact path="/setting" element={user ? <Setting /> : <Register />} />
           <Route path="/login" element= {user ? <Home/> :<Login />} />
-          <Route path="/register" element= {user ? <Home/> :<Register />} />
+          <Route path="/register" element= {user ? <Home/> :<Register />} /> */}
 
 
       </Routes>

@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams, useNavigate } from 'react-router-dom';
+// import { Context } from "./../context/Context";
+// import { useContext } from 'react';
 
-
-function TweetDetail({ tweets, deleteTweet }) {
+function TweetDetail({ tweets, handleDelete }) {
   const { id } = useParams();
   const tweet = tweets?.find((tweet) => tweet._id === id);
   const navigate = useNavigate();
+  // const { user } = useContext(Context);
 
-  const handleDelete = async (_id) => {
+  const deleteTweet = async (_id) => {
     try {
-      await deleteTweet(_id);
+      await handleDelete(_id);
       navigate('/tweets');
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -25,8 +27,12 @@ function TweetDetail({ tweets, deleteTweet }) {
       <p>{tweet?.description}</p>
       <p>{tweet?.linkedin}</p>
       <p>{tweet?.github}</p>
-      <button onClick={() => handleDelete(tweet?._id)}>DELETE</button>
+      {/* {user && tweet && user.username === tweet.username && ( */}
+        <>
+        <button onClick={() => deleteTweet(tweet._id)}>DELETE</button>
       <Link to={`/tweets/${tweet?._id}/edit`}>EDIT</Link>
+        </>
+      {/* )} */}
     </div>
   );
 }

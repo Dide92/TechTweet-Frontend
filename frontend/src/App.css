@@ -1,11 +1,11 @@
 
 body {
-  margin:70px;
+  /* margin:70px; */
 }
 .nav {
-  position: fixed;
+  position: sticky;
   background-color: #fff;
-  margin-top: -50px;
+  margin-top: 0px;
   z-index: 1;
   width:100%;
 }
@@ -24,34 +24,195 @@ li {
 }
 
 .first {
-    background-color: black;
-    margin:40px 30px 0;
+  /* background-color: rgb(17, 17, 38); */
+    background-image:url("../src/images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 75%;
+    /* margin:40px 30px 0; */
+    height:100vh;
+
 }
-.video {
-  height: 600px;
+
+.news {
+  height:100vh;
+  overflow: hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-sizing:border-box;
+  column-gap: 1%;
 }
-video {
+.container1 {
+  width:350px;
+  height:500px;
+  perspective:800px;
+
+}
+.container2 {
+  width:350px;
+  height:500px;
+  perspective:800px;
+}
+
+.container1:hover > .card{
+  cursor:pointer;
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+.container2:hover > .card{
+  cursor:pointer;
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+.card {
+
+  height: 100%;
+  width:100%;
+  position:relative;
+  transition:transform 1500ms;
+  transform-style: preserve-3d;
+  animation-name: wipe-enter;
+  animation-duration: 4s;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  
+}
+.front1, .front2, .front3, .front4, .front5,
+.back {
+  height:100%;
+  width:100%;
+  border-radius: 2rem;
+  box-shadow:0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position:absolute;
+  backface-visibility: hidden;
+}
+.front1 {
+  background-image:url("../src/images/apple.jpeg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.front2 {
+  background-image:url("../src/images/tesla.jpeg");
+  background-size: cover;
+  background-position: 100%;
+}
+.front3 {
+  background-image:url("../src/images/microsoft.jpeg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.front4 {
+  background-image:url("../src/images/facebook.jpeg");
+  background-size: cover;
+  background-position: 100%;
+}
+.front5 {
+  background-image:url("../src/images/google.jpeg");
+  background-size: cover;
+  background-position: 100%;
+}
+
+.back {
+  background-color:#001928;
+  color:white;
+  background-size: cover;
+  background-position: 50% 10%;
+  backdrop-filter: blur(20%);
+  transform: rotateY(180deg) rotateZ(180deg);
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  gap: 5rem;
+}
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+.title {
+/* border:1px solid white;   */
+display:flex;
+ justify-content: center;
+ align-items: center;
+  height:40vh;
+  width:40vw;
+  position:absolute;
+  left:30%;
+  top:8rem;
+}
+/* .video {
+} */
+/* video {
   margin-top: 4%;
     height:50vh;
     display: inline;
-}
-
+} */
+/* 
 .hello {
     position:absolute;
     top:20%;
     right:10%;
     display:inline-block;
-}
+} */
 
-h1{
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid;
+.tech{
+    /* background-color: pink; */
     color:white;
-    width: 0;
-    animation: typing 2.5s steps(30, end) forwards, blinking 1s infinite;
+    display:inline;
+    position:absolute;
+    left:10rem;
+    font-size:4rem;
+    top:5rem;
+    animation: 3s ease-out 0s 1 slideFromTop;
+  }
+  @keyframes slideFromTop {
+    0% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
   }
 
+.tweet{
+    /* background-color: green; */
+    display:inline;
+    color:white;
+    position:absolute;
+    font-size:4rem;
+    left:30rem;
+    top:5rem;
+    animation: 3s ease-out 0s 1 slideFromBottom;
+
+  }
+  @keyframes slideFromBottom {
+    0% {
+      transform: translateY(300%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .logo {
+    position:absolute;
+    left:22rem;
+    height:100px;
+    width:100px;
+    top:8rem;
+    animation: 5s ease-in 0s 1 logoFadeIn;
+
+  }
+  @keyframes logoFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   .news {
     text-align: center;
     height:600px;
@@ -62,6 +223,7 @@ h1{
     display: grid;
     margin:8% auto;
     column-gap: 10px;
+    justify-content: center;
   }
 
   .grid-container--fill {
@@ -76,17 +238,46 @@ h1{
   }
 
   .grid-element {
-    background-color: deepPink;
     padding: 8%;
-    color: #fff;
-    border: 1px solid #fff;
+    color:gray;
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: 8%;
+    overflow:hidden;
+    box-shadow:0 2px 20px gray;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor:pointer;
+    transition:transform 200ms ease-in;
   }
-
-  img {
+  .grid-element:hover {
+    transform: scale(1.02);
+  }
+  .card_image {
+    height:50%;
+    width:50%;
+    object-fit:cover;
+  }
+  .buttonContainer {
+    position:absolute;
+    display:flex;
+    justify-content: center;
+   
+    
+  }
+  .deleteButton {
+    position:relative;
+    left:400%;
+  }
+  .editButton {
+    position:relative;
+    left:400%;
+  }
+  /* .logo  img{
     padding:0 10%;
     height:200px;
     width:200px;
-  }
+  } */
   .new {
     height:500px;
     border: 2px solid purple;
@@ -129,4 +320,61 @@ h1{
     100% {border-color: transparent}
   }
   
-  
+
+.button-56 {
+  align-items: center;
+  background-color: #84fcd4;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-56:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-56:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-56:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button-56:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+}

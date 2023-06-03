@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function NewTweet({ createTweet }) {
+  const navigate = useNavigate();
+
   const [tweetData, setTweetData] = useState({
     title: '',
     username: '',
@@ -27,6 +30,7 @@ function NewTweet({ createTweet }) {
         linkedin: '',
         github: '',
       });
+      navigate('/tweets');
     } catch (error) {
       console.error(error);
     }
