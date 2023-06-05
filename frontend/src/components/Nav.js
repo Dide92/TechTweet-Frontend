@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from "../images/logo.png"
+
 // import { Context } from "./../context/Context";
 // import { useContext } from 'react';
 
@@ -15,6 +17,9 @@ function Nav() {
     <div className='nav'>
       <section className="navbar">
         <ul>
+        <li>
+            <Link className='navtext' to="/"><img className='logoNav' src={Logo}></img></Link>
+          </li>
           <li>
             <Link className='navtext' to="/">.home</Link>
           </li>

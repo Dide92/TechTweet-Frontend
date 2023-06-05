@@ -37,12 +37,13 @@ function NewTweet({ createTweet }) {
   };
 
   return (
-    <div>
+    <div className='newTweet'>
       <section className='new'>
-      <h2>Publish a Tweet</h2>
       <div className='new-container'>
+      <h2>Publish a Tweet</h2>
       <form onSubmit={handleSubmit}>
         <input
+          className='first-input'
           type="text"
           name="title"
           value={tweetData.title}
@@ -50,6 +51,7 @@ function NewTweet({ createTweet }) {
           onChange={handleChange}
         /><br></br>
         <input
+          className='second-input' 
           type="text"
           name="username"
           value={tweetData.username}
@@ -57,23 +59,22 @@ function NewTweet({ createTweet }) {
           onChange={handleChange}
         /><br></br>
         <input
+          className='third-input'
           type="text"
           name="image"
           value={tweetData.image}
           placeholder="Image URL"
           onChange={handleChange}
         /><br></br>
-        <input
-          type="textarea"
-          className='textarea'
+        <textarea
+          className='textarea forth-input'
           name="description"
-          rows="10" 
-          cols="50"
           value={tweetData.description}
           placeholder="Description"
           onChange={handleChange}
         /><br></br>
         <input
+          className='fifth-input'
           type="text"
           name="linkedin"
           value={tweetData.linkedin}
@@ -81,13 +82,14 @@ function NewTweet({ createTweet }) {
           onChange={handleChange}
         />
         <input
+          className='sixth-input'
           type="text"
           name="github"
           value={tweetData.github}
           placeholder="GitHub URL"
           onChange={handleChange}
         /><br></br>
-        <button type="submit">Add Tweet</button>
+        <button type="submit" className='add'>Add Tweet</button>
       </form>
       </div>
       </section>

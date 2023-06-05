@@ -21,7 +21,7 @@ function EditForm({ tweets, handleUpdate }) {
   };
 
   return (
-    <div>
+    <div className='new'>
       <h2>Edit Tweet</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
@@ -31,7 +31,7 @@ function EditForm({ tweets, handleUpdate }) {
           name="title"
           value={editTweet.title}
           onChange={handleChange}
-        />
+        /><br></br>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -39,7 +39,7 @@ function EditForm({ tweets, handleUpdate }) {
           name="username"
           value={editTweet.username}
           onChange={handleChange}
-        />
+        /><br></br>
         <label htmlFor="image">Image URL:</label>
         <input
           type="text"
@@ -47,14 +47,15 @@ function EditForm({ tweets, handleUpdate }) {
           name="image"
           value={editTweet.image}
           onChange={handleChange}
-        />
+        /><br></br>
         <label htmlFor="description">Description:</label>
         <textarea
           id="description"
           name="description"
+          className='textarea'
           value={editTweet.description}
           onChange={handleChange}
-        />
+        /><br></br>
         <label htmlFor="linkedin">LinkedIn:</label>
         <input
           type="text"
@@ -70,7 +71,7 @@ function EditForm({ tweets, handleUpdate }) {
           name="github"
           value={editTweet.github}
           onChange={handleChange}
-        />
+        /><br></br>
         <button type="submit">Update</button>
         <Link to="/tweets">Cancel</Link>
       </form>
