@@ -23,24 +23,34 @@ function Tweet({ tweets, handleDelete, handleUpdate }) {
   };
 
   return (
+    <div>
+    <h1 className='tweets'>TWEETS</h1>
+
+    
     <div className="grid-container grid-container--fit">
+      
       {tweets.map((tweet) => (
         <div key={tweet._id}>
+          
           {editTweet && editTweet._id === tweet._id ? (
             <EditForm tweet={editTweet} handleUpdate={handleUpdateTweet} />
+            
           ) : (
+            
             <div className="grid-element">
-              <Link to={`/tweet/${tweet._id}`}>{tweet.title}</Link>
+              
+              <h1 className='tweetTitle'>{tweet.title}</h1>
               <p>Author: {tweet.username}</p>
               <img className='card_image' src={tweet.image} alt="Tweet" />
               <p className="description">{tweet.description}</p>
               <button className="button-27" role="button">
-                <Link to={`/tweet/${tweet._id}`}>Read Me!</Link>
+                <Link style={{textDecoration:'none', color:'black'}} to={`/tweet/${tweet._id}`}>Read Me!</Link>
               </button>
             </div>
           )}
         </div>
       ))}
+    </div>
     </div>
   );
 }

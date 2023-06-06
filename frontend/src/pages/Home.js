@@ -15,19 +15,20 @@ function Home() {
       const res = await axios.get('/tweets');
       setTweets(res.data);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 
   return (
     <div className="home">
+      
       <section className='first'>
         <div className='title'>
           <h1 className='tech'>Tech</h1>
           <h1 className='tweet'>Tweet</h1>
           <img className='logo'src={Logo}/>
           {/* <video autoPlay loop muted playsInline>
-            <source src="/images/matrix1.mp4" />
+            <source src="../techbackground.mp4" />
           </video> */}
         </div> 
         <div className='hello'>

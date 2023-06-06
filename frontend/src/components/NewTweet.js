@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Linkedin from "../images/linkedin.png"
+import Github from "../images/github.png"
 
 
 function NewTweet({ createTweet }) {
@@ -73,6 +75,9 @@ function NewTweet({ createTweet }) {
           placeholder="Description"
           onChange={handleChange}
         /><br></br>
+        <label name='linkedin'>
+          <img className='linkedin-icon fifth-input' src={Linkedin}></img>
+        </label>
         <input
           className='fifth-input'
           type="text"
@@ -80,7 +85,10 @@ function NewTweet({ createTweet }) {
           value={tweetData.linkedin}
           placeholder="LinkedIn URL"
           onChange={handleChange}
-        />
+        /><br></br>
+        <label name='github'>
+          <img className='github-icon sixth-input' src={Github}></img>
+        </label>
         <input
           className='sixth-input'
           type="text"
@@ -89,7 +97,7 @@ function NewTweet({ createTweet }) {
           placeholder="GitHub URL"
           onChange={handleChange}
         /><br></br>
-        <button type="submit" className='add'>Add Tweet</button>
+        <button type="submit" className="button-27 add" style={{width:'20vw', color:'black', marginTop:'3rem'}} role="button">Tweet</button>
       </form>
       </div>
       </section>
