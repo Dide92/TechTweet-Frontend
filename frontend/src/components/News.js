@@ -32,7 +32,7 @@ function News() {
             <div className='front3'></div>
             <div className='back'>
             <h1>Microsoft</h1>
-            <p style={{paddingRight:'1rem', paddingLeft:'1rem'}}>Microsoft unveils Windows 11: Microsoft has officially announced Windows 11, the highly anticipated successor to Windows 10. Windows 11 brings a fresh and modern user interface, centered around a simplified Start menu, redesigned taskbar, and improved multitasking capabilities. The new operating system also offers enhanced performance and efficiency, with faster boot times, optimized power management, and improved gaming features. One of the most significant additions is the integration of Android apps through the Microsoft Store, enabling users to run their favorite mobile applications directly on their Windows devices.</p>
+            <p style={{paddingRight:'1rem', paddingLeft:'1rem'}}>Microsoft unveils Windows 11: Microsoft has officially announced Windows 11, the highly anticipated successor to Windows 10. Windows 11 brings a fresh and modern user interface, centered around a simplified Start menu, redesigned taskbar, and improved multitasking capabilities.  One of the most significant additions is the integration of Android apps through the Microsoft Store, enabling users to run their favorite mobile applications directly on their Windows devices.</p>
             </div>
           </div>
       </div>
@@ -41,7 +41,7 @@ function News() {
             <div className='front4'></div>
             <div className='back'>
             <h1>Facebook</h1>
-            <p style={{paddingRight:'1rem', paddingLeft:'1rem'}}>Facebook's smart glasses collaboration: Facebook has partnered with renowned eyewear manufacturer EssilorLuxottica to develop a new generation of smart glasses. Known as Ray-Ban Stories, these stylish eyewear devices combine fashion with cutting-edge technology. The smart glasses allow users to capture photos and videos, listen to music, and answer phone calls, all through discreet built-in cameras and speakers. The glasses sync with the Facebook View app, which provides a seamless way to store and share content captured with the device. </p>
+            <p style={{paddingRight:'1rem', paddingLeft:'1rem'}}>Facebook has partnered with renowned eyewear manufacturer EssilorLuxottica to develop a new generation of smart glasses. Known as Ray-Ban Stories, these stylish eyewear devices combine fashion with cutting-edge technology. The smart glasses allow users to capture photos and videos, listen to music, and answer phone calls, all through discreet built-in cameras and speakers. The glasses sync with the Facebook View app, which provides a seamless way to store and share content captured with the device. </p>
             </div>
           </div>
       </div>

@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import News from "./components/News";
+import Events from "./components/Events";
 import TweetDetail from './components/TweetDetail';
 import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 import EditForm from './components/EditForm';
@@ -78,6 +79,7 @@ React.useEffect(() => {
       <Route exact path="/new" element={<NewTweet createTweet={createTweet}/>} />
           <Route exact path="/tweets" element={<Tweet tweets={tweets} createTweet={createTweet} handleDelete={deleteTweet} handleUpdate={updateTweet} /> } />
           <Route exact path="/news" element={<News />} />
+          <Route exact path="/events" element={<Events />} />
           <Route exact path="/tweet/:id" element={<TweetDetail tweets={tweets} handleDelete={deleteTweet}/>} />
           <Route exact path="/tweets/:id/edit" element={<EditForm tweets={tweets} handleUpdate={updateTweet} />}/>      
           {/* <Route exact path="/setting" element={user ? <Setting /> : <Register />} />

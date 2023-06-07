@@ -39,7 +39,7 @@ li {
     background-image:url("../src/images/background1.png");
     background-repeat: no-repeat;
     background-size: cover; 
-    background-position: 100% 75%; 
+    background-position: 100%; 
     box-shadow: 0px 2px 50px gray;
     height:100vh;
 
@@ -256,7 +256,7 @@ display:flex;
     background-color:#001928;
     margin:0 1rem;
     padding: 7%;    
-    color: gray;
+    color: white;
     border: 2px solid rgb(201, 201, 201);
     border-radius: 8%;
     overflow: hidden;
@@ -312,10 +312,9 @@ display:flex;
   /* buttons */
   .button-27 {
     
-    background-color: white;
-    border: 2px solid white;
+    background-color:rgb(250, 176, 102);
+    border: 1px solid rgb(255, 128, 0);
     border-radius: 15px;
-    color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
@@ -341,7 +340,7 @@ display:flex;
   .button-27:hover {
     /* box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px; */
     transform: translateY(-2px);
-    background-color:#88fcdc;
+    background-color:rgb(255, 128, 0);
 
   }
   
@@ -382,7 +381,7 @@ textarea[name=description] {
 
 .new {
   /* border:2px solid green; */
-  background-color: #001928;
+  /* background-color: #001928; */
   padding-top:2rem;
   margin-bottom:5%;
   height:100vh;
@@ -394,7 +393,8 @@ textarea[name=description] {
 
 }
 .detail {
-  background-color:gray;
+  background-color:#001928;
+  color:white;
   width:40%;
   position:relative;
   left:30%;
@@ -410,7 +410,7 @@ textarea[name=description] {
 
 }
 form {
-  background-color:gray;
+  background-color:#001928;
   width:40%;
   position:relative;
   left:30%;
@@ -434,7 +434,6 @@ form {
   position: relative;
   top: 1rem;
   margin-left:-2rem;
-  
 }
 .github-icon {
   height:40px;
@@ -443,10 +442,23 @@ form {
   top: 1rem;
   margin-left:-2rem;
 }
-.github-icon1{
-  height:55px;
-  width:55px;
+
+.github-icon1 {
+  height:50px;
+  width:50px;
+  position: relative;
+  top: 1rem;
 }
+.linkedin-icon1 {
+  height:50px;
+  width:50px;
+  position: relative;
+  top: 1rem;
+  right:5%;
+  margin-left:5%;
+}
+
+
 input {
   width:50%;
   margin:20px;
@@ -503,6 +515,76 @@ input {
     opacity:1
   }
 }
+/* EVENTS */
+
+.event-container h3.year {
+  font-size:40px;
+  text-align: center;
+  border-bottom:1px solid gray;
+}
+
+.event-container .event {
+  display: flex;
+  border-radius: 8px;
+  margin:32px 0;
+}
+
+.event .event-left {
+  background:orange;
+  min-width:82px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  padding:8px 48px;
+  font-weight:bold;
+  text-align:center;
+  border-radius: 8px 0 0 8px;
+}
+
+.event .event-left .date {
+  font-size:56px;
+}
+
+.event .event-left .month {
+  font-size:16px;
+  font-weight:normal;
+}
+
+.event .event-right {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 24px;
+  background-color: white;
+  color:black
+
+}
+.event .event-right h3.event-title {
+  font-size:24px;
+  margin:24px 0 10px 0;
+  color:gray;
+  text-transform: uppercase;
+
+}
+
+.event .event-right .event-timing {
+  background:rgb(246, 156, 108);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:100px;
+  padding:8px;
+  border-radius: 16px;
+  margin:24px 0;
+  font-size:14px;
+}
+
+.event .event-right .event-timing img {
+  height: 20px;
+  padding-right:8px;
+}
+
 
 /* Footer */
 .footer {

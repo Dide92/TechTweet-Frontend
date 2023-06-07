@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Linkedin from "../images/linkedin.png"
-import Github from "../images/github.png"
+import Linkedin from "../images/bluelinkedin.png"
+import Github from "../images/bluegithub.png"
 
 
 function NewTweet({ createTweet }) {

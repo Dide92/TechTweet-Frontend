@@ -32,6 +32,9 @@ function Nav() {
           <li>
             <Link className='navtext' to="/new">.new</Link>
           </li>
+          <li>
+            <Link className='navtext' to="/events">.events</Link>
+          </li>
           {/* <li>
             <Link className='navtext' to="/login">.login</Link>
           </li>
