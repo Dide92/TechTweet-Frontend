@@ -29,6 +29,7 @@ function App() {
     } catch (error) {
       console.error(error);
     }
+    fetchTweets()
   };
 
   const createTweet = async (tweetData) => {
