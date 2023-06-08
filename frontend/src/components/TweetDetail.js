@@ -31,7 +31,7 @@ function TweetDetail({ tweets, handleDelete }) {
       <p className='tweetDescription'>{tweet?.description}</p><br></br><br></br>
       <Link to={tweet?.linkedin}><img className='linkedin-icon1' src={Linkedin}></img></Link>
       <Link to={tweet?.github}><img className='github-icon1' src={Github}></img></Link><br></br><br></br><br></br><br></br>
-      {user.username === tweet.username (
+      {/* {user && tweet && user.username === tweet.username && ( */}
         <>
         <button className="button-27" style={{width:'20vw', color:'black'}} role="button" onClick={() => deleteTweet(tweet._id)}>Delete</button>
       <button className="button-27" style={{width:'20vw', color:'black'}} role="button" ><Link style={{textDecoration:'none', color:'black'}} to={`/tweets/${tweet?._id}/edit`}>Edit</Link></button>
