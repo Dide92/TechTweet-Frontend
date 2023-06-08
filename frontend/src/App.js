@@ -25,7 +25,7 @@ function App() {
   const fetchTweets = async () => {
     try {
       const res = await axios.get(`${URL}/tweets/`);
-      setTweets(res.data.data);
+      setTweets(res.data);
     } catch (error) {
       console.error(error);
     }
