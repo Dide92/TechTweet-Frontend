@@ -24,12 +24,11 @@ function App() {
   const URL = process.env.REACT_APP_API_URL;
   const fetchTweets = async () => {
     try {
-      const res = await axios.get(`${URL}/tweets`);
+      const res = await axios.get(`${URL}/tweets/`);
       setTweets(res.data.data);
     } catch (error) {
       console.error(error);
     }
-    fetchTweets()
   };
 
   const createTweet = async (tweetData) => {
