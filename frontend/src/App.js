@@ -33,7 +33,7 @@ function App() {
 
   const createTweet = async (tweetData) => {
     try {
-      await axios.post('tweets/new', tweetData);
+      await axios.post(`${URL}/tweets/new`, tweetData);
       fetchTweets();
     } catch (error) {
       console.error(error);
@@ -43,7 +43,7 @@ function App() {
   const deleteTweet = async (_id) => {
     // console.log(id)
     try {
-      await axios.delete(`/tweets/${_id}`);
+      await axios.delete(`${URL}/tweets/${_id}`);
       fetchTweets();
     } catch (error) {
       console.error(error);
@@ -54,7 +54,7 @@ function App() {
   const updateTweet = async (updatedTweet) => {
     // console.log(id)
     try {
-      await axios.put(`/tweets/${updatedTweet._id}`, updatedTweet);
+      await axios.put(`${URL}/tweets/${updatedTweet._id}`, updatedTweet);
       fetchTweets();
     } catch (error) {
       console.error(error);
