@@ -14,12 +14,12 @@ import Events from "./components/Events";
 import TweetDetail from './components/TweetDetail';
 import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 import EditForm from './components/EditForm';
-// import { Context } from "./context/Context";
+import { Context } from "./context/Context";
 
 
 
 function App() {
-  // const { user } = useContext(Context);
+  const { user } = useContext(Context);
   const [tweets, setTweets] = React.useState([]);
   const URL = process.env.REACT_APP_API_URL;
   const fetchTweets = async () => {

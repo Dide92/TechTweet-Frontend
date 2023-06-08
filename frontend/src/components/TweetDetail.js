@@ -4,14 +4,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Linkedin from "../images/bluelinkedin.png"
 import Github from "../images/bluegithub.png"
 
-// import { Context } from "./../context/Context";
-// import { useContext } from 'react';
+import { Context } from "./../context/Context";
+import { useContext } from 'react';
 
 function TweetDetail({ tweets, handleDelete }) {
   const { id } = useParams();
   const tweet = tweets?.find((tweet) => tweet._id === id);
   const navigate = useNavigate();
-  // const { user } = useContext(Context);
+  const { user } = useContext(Context);
 
   const deleteTweet = async (_id) => {
     try {

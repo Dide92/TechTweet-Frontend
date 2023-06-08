@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from "../images/logo.png"
 
-// import { Context } from "./../context/Context";
-// import { useContext } from 'react';
+import { Context } from "./../context/Context";
+import { useContext } from 'react';
 
 
 
 function Nav() {
-  // const { user, dispatch } = useContext(Context);
-  // const handleLogout = () => {
-  //   dispatch({ type: ".logout" })
-  // }
+  const { user, dispatch } = useContext(Context);
+  const handleLogout = () => {
+    dispatch({ type: ".logout" })
+  }
 
   return (
     <div className='nav'>
@@ -35,7 +35,7 @@ function Nav() {
           <li>
             <Link className='navtext' to="/events">.events</Link>
           </li>
-          {/* <li>
+          <li>
             <Link className='navtext' to="/login">.login</Link>
           </li>
           <li>
@@ -43,7 +43,7 @@ function Nav() {
           </li>
           <li onClick={handleLogout}>
             {user && ".logout"}
-          </li> */}
+          </li>
           <li>
             {/* <Link to="/contact">Contact</Link> */}
           </li>
