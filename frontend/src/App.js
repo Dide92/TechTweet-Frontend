@@ -21,10 +21,10 @@ import EditForm from './components/EditForm';
 function App() {
   // const { user } = useContext(Context);
   const [tweets, setTweets] = React.useState([]);
-
+  const URL = process.env.REACT_APP_API_URL;
   const fetchTweets = async () => {
     try {
-      const res = await axios.get('/tweets');
+      const res = await axios.get(`${URL}/tweets`);
       setTweets(res.data);
     } catch (error) {
       console.error(error);
