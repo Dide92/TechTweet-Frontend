@@ -43,7 +43,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://tech-tweet-backend.herokuapp.com/api",
+  "proxy": "https://tech-tweet-backend.herokuapp.com/api/tweets",
   "devDependencies": {
   }
 }
