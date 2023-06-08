@@ -32,7 +32,7 @@ function Login() {
             <input type="text" placeholder='Enter your username'  ref={userRef}/>
             <label>Password</label>
             <input type="password" placeholder='Enter your password' ref={passwordRef} />
-            <button className='loginButton' type="submit" disabled={isFetching}>Login</button>
+            <button className='loginButton' type="submit" >Login</button>
         </form>
         <button className='registerButton'><Link to="/register">Register</Link></button>
 
