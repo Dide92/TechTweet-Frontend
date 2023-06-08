@@ -23,7 +23,7 @@ const Reducer = (state, action) => {
             return {
                 user: null,
                 isFetching: false,
-                error: false,
+                error: true,
             };
         default:
             return state;

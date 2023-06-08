@@ -635,3 +635,7 @@ input {
   padding-top: 1%;
   left:90%;
 }
+.loginButton:disabled {
+  cursor:not-allowed;
+  background-color:coral;
+}
