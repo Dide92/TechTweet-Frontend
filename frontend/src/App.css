@@ -388,6 +388,8 @@ textarea[name=description] {
   width:100vw;
   text-align: center;
   background: rgb(255,255,255);
+  overflow-x:scroll;
+
 
   /* background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 36%, rgba(221,221,221,1) 61%, rgba(191,191,191,1) 86%, rgba(176,175,174,0.9122242647058824) 100%); */
 
@@ -402,6 +404,24 @@ textarea[name=description] {
   padding:5rem 2rem;
   margin-top: 2rem;
   overflow-y: scroll;
+  overflow-x:scroll;
+
+}
+.login {
+  width:40%;
+  margin-top: 2rem;
+  position:relative;
+  border-radius:8%;
+  background-color:#001928;
+  color:white;
+  margin-bottom:5%;
+  overflow-x:scroll;
+  left:30%;
+  padding:2rem;
+
+}
+.login input {
+  margin:2rem;
 }
 
 .tweetDescription {
@@ -461,7 +481,7 @@ form {
 
 input {
   width:50%;
-  margin:20px;
+  /* margin:20px; */
   resize: vertical;
   padding:15px;
   border-radius:15px;

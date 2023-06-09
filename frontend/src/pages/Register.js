@@ -13,11 +13,13 @@ function Register() {
         e.preventDefault()
         setError(false);
         try{
-            const res = await axios.post("/auth/register", {
+            const URL = process.env.REACT_APP_API_URL;
+            const res = await axios.post(`${URL}/auth/register`, {
                 username,
                 email,
                 password,
             });
+            setUsername(res.data)
             res.data && window.location.replace("/login")
         }catch(err){
             setError(true)

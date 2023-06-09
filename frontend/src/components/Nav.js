@@ -41,6 +41,9 @@ function Nav() {
           <li>
             <Link className='navtext' to="/register">.register</Link>
           </li>
+          {/* <li>
+            <Link className='navtext' to="/setting">.setting</Link>
+          </li> */}
           <li onClick={handleLogout}>
             {user && ".logout"}
           </li>

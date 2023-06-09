@@ -20,6 +20,7 @@ import { Context } from "./context/Context";
 
 function App() {
   const { user } = useContext(Context);
+  // const { user } =true
   const [tweets, setTweets] = React.useState([]);
   const URL = process.env.REACT_APP_API_URL;
   const fetchTweets = async () => {
@@ -83,11 +84,11 @@ React.useEffect(() => {
           <Route exact path="/tweet/:id" element={<TweetDetail tweets={tweets} handleDelete={deleteTweet}/>} />
           <Route exact path="/tweets/:id/edit" element={<EditForm tweets={tweets} handleUpdate={updateTweet} />}/>    
           <Route path="/register" element= {<Register />} />   
-          <Route path="/login" element= {<Login />} /> 
-          <Route path="/setting" element= {<Setting />} /> 
-          {/* <Route exact path="/setting" element={user ? <Setting /> : <Register />} />
-          <Route path="/login" element= {user ? <Home/> :<Login />} />
-          <Route path="/register" element= {user ? <Home/> :<Register />} /> */}
+          {/* <Route path="/login" element= {<Login />} />  */}
+          {/* <Route path="/setting" element= {<Setting />} />  */}
+          {/* <Route exact path="/setting" element={user ? <Setting /> : <Register />} /> */}
+          <Route path="/login" element= {user ? <><Home/><Tweet tweets={tweets} handleDelete={deleteTweet} handleUpdate={updateTweet} /></> :<Login />} />
+          <Route path="/register" element= {user ? <Home/> :<Register />} />
 
 
       </Routes>

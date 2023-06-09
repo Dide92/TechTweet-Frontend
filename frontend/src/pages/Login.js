@@ -9,12 +9,12 @@ function Login() {
     const passwordRef = useRef();
 
     const { user, dispatch, isFetching } = useContext(Context)
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type:"LOGIN_START" });
         try{
-            const res = await axios.post("/auth/login", {
+            const URL = process.env.REACT_APP_API_URL;
+            const res = await axios.post(`${URL}/auth/login`, {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
             });
@@ -26,15 +26,15 @@ function Login() {
     console.log(user)
     return(
     <div className='login'>
-        <span className='loginTitle'>Login Title</span>
+        <h1>Login</h1>
         <form className='loginForm' onSubmit={handleSubmit}>
-            <label>Username</label>
-            <input type="text" placeholder='Enter your username'  ref={userRef}/>
-            <label>Password</label>
+            {/* <label style={{color:'white'}} name='username'>Username</label> */}
+            <input type="text" name='username' placeholder='Enter your username' ref={userRef}/>
+            {/* <label style={{color:'white'}}>Password</label> */}
             <input type="password" placeholder='Enter your password' ref={passwordRef} />
-            <button className='loginButton' type="submit" disabled={isFetching}>Login</button>
+            <button className="button-27" role="button" type="submit" disabled={isFetching}>Login</button>
         </form>
-        <button className='registerButton'><Link to="/register">Register</Link></button>
+        <button className="button-27" role="button"><Link to="/register">Register</Link></button>
 
     </div>
     )
