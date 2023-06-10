@@ -77,7 +77,7 @@ React.useEffect(() => {
       <Nav />
       <Routes>
       <Route exact path="/" element={<><Home /><Tweet tweets={tweets} handleDelete={deleteTweet} handleUpdate={updateTweet} /></>} />
-      <Route exact path="/new" element={<NewTweet createTweet={createTweet}/>} />
+      <Route exact path="/new" element={user? <NewTweet createTweet={createTweet}/>:<Login />} />
           <Route exact path="/tweets" element={<Tweet tweets={tweets} createTweet={createTweet} handleDelete={deleteTweet} handleUpdate={updateTweet} /> } />
           <Route exact path="/news" element={<News />} />
           <Route exact path="/events" element={<Events />} />

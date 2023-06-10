@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Linkedin from "../images/bluelinkedin.png"
 import Github from "../images/bluegithub.png"
-
+import { Context } from "./../context/Context";
+import { useContext } from 'react';
 
 function NewTweet({ createTweet }) {
   const navigate = useNavigate();
+  const { user } = useContext(Context)
 
   const [tweetData, setTweetData] = useState({
     title: '',
-    username: '',
+    username: user.username,
     image: '',
     description: '',
     linkedin: '',
@@ -26,7 +28,7 @@ function NewTweet({ createTweet }) {
       await createTweet(tweetData);
       setTweetData({
         title: '',
-        username: '',
+        username: user.username,
         image: '',
         description: '',
         linkedin: '',

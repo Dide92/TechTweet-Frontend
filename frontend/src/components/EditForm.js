@@ -41,7 +41,6 @@ function EditForm({ tweets, handleUpdate }) {
           id="username"
           name="username"
           value={editTweet.username}
-          onChange={handleChange}
         /><br></br>
         <label htmlFor="image">Image URL:</label><br></br>
         <input
