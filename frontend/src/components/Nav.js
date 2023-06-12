@@ -5,20 +5,19 @@ import Logo from "../images/logo.png"
 import { Context } from "./../context/Context";
 import { useContext } from 'react';
 
-
-
 function Nav() {
   const { user, dispatch } = useContext(Context);
+
   const handleLogout = () => {
-    dispatch({ type: ".logout" })
+    dispatch({ type: ".logout" });
   }
 
   return (
     <div className='nav'>
       <section className="navbar">
         <ul>
-        <li>
-            <Link className='navtext' to="/"><img className='logoNav' src={Logo}></img></Link>
+          <li>
+            <Link className='navtext' to="/"><img className='logoNav' src={Logo} alt="Logo" /></Link>
           </li>
           <li>
             <Link className='navtext' to="/">.home</Link>
@@ -35,21 +34,21 @@ function Nav() {
           <li>
             <Link className='navtext' to="/events">.events</Link>
           </li>
-          <li>
-            <Link className='navtext' to="/login">.login</Link>
-          </li>
-          <li>
-            <Link className='navtext' to="/register">.register</Link>
-          </li>
-          {/* <li>
-            <Link className='navtext' to="/setting">.setting</Link>
-          </li> */}
-          <li onClick={handleLogout}>
-            {user && ".logout"}
-          </li>
-          <li>
-            {/* <Link to="/contact">Contact</Link> */}
-          </li>
+          {!user ? (
+            <>
+              <li>
+                <Link className='navtext' to="/login">.login</Link>
+              </li>
+              <li>
+                <Link className='navtext' to="/register">.register</Link>
+              </li>
+
+            </>
+          ) : (
+            <li style={{ cursor: 'pointer' }} onClick={handleLogout}>
+              .logout
+            </li>
+          )}
         </ul>
       </section>
     </div>

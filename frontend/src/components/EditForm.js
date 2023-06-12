@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Linkedin from "../images/bluelinkedin.png"
@@ -12,6 +12,7 @@ function EditForm({ tweets, handleUpdate }) {
   const navigate = useNavigate();
 
   const [editTweet, setEditTweet] = React.useState(tweet);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleChange = (e) => {
     setEditTweet({ ...editTweet, [e.target.name]: e.target.value });
@@ -22,11 +23,18 @@ function EditForm({ tweets, handleUpdate }) {
     handleUpdate(editTweet);
     navigate('/tweets');
   };
+  const toggleColor = () => {
+    setIsClicked(!isClicked);
+  };
+  const formClassName = isClicked ? 'white' : '';
 
   return (
     <div className='new'>
-      <h2>Edit Tweet</h2>
-      <form onSubmit={handleSubmit}>
+      <form className={formClassName} onSubmit={handleSubmit}>
+      <div className={`toggle-bar ${isClicked ? 'active' : ''}`} onClick={toggleColor}>
+            <div className="toggle-handle"></div>
+      </div>
+      <h1>Edit Tweet</h1>
         <label htmlFor="title">Title:</label><br></br>
         <input
           type="text"

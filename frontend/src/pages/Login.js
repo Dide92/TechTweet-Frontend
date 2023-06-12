@@ -32,15 +32,18 @@ function Login() {
   };
 
   return (
-    <div className='login'>
-      <h1>Login</h1>
+    <div className='new detail'>
+      <h1 style={{position:'relative', left:'2rem'}}>Login</h1>
       {error && <p className="error-message">{error}</p>}
-      <form className='loginForm' onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
+        <label>Username:</label>
         <input type="text" name='username' placeholder='Enter your username' ref={userRef} />
+        <label>Password:</label>
         <input type="password" placeholder='Enter your password' ref={passwordRef} />
-        <button className="button-27" role="button" type="submit" disabled={isFetching}>Login</button>
+        <button className="button-27" role="button" type="submit" disabled={isFetching}>Login</button><br></br><br></br>
+        <Link style={{textDecoration:'none', color:'white', textAlign:'left'}} to="/register">Click here to <span style={{color:'rgb(255, 128, 0)'}}>Register</span></Link>
+
       </form>
-      <button className="button-27" role="button"><Link to="/register">Register</Link></button>
     </div>
   );
 }

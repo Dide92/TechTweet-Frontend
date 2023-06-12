@@ -8,6 +8,8 @@ import { useContext } from 'react';
 function NewTweet({ createTweet }) {
   const navigate = useNavigate();
   const { user } = useContext(Context)
+  const [isClicked, setIsClicked] = useState(false);
+
 
   const [tweetData, setTweetData] = useState({
     title: '',
@@ -39,13 +41,20 @@ function NewTweet({ createTweet }) {
       console.error(error);
     }
   };
+  const toggleColor = () => {
+    setIsClicked(!isClicked);
+  };
+  const formClassName = isClicked ? 'white' : '';
 
   return (
     <div className='newTweet'>
       <section className='new'>
       <div className='new-container'>
-      <h2>Publish a Tweet</h2>
-      <form onSubmit={handleSubmit}>
+      <form className={formClassName} onSubmit={handleSubmit}>
+      <div className={`toggle-bar ${isClicked ? 'active' : ''}`} onClick={toggleColor}>
+            <div className="toggle-handle"></div>
+          </div>
+      <h1>Publish a Tweet</h1>
         <input
           className='first-input'
           type="text"

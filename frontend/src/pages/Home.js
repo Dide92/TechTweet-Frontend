@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import News from '../components/News';
+import Homesection from '../components/Homesection';
+
 import axios from 'axios';
 import Logo from "../images/logo.png"
 
@@ -37,7 +39,7 @@ function Home() {
       </section>
       <section>
         <News />
-       
+        <Homesection />
       </section>
     </div>
   );

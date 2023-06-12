@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Clock from "../images/clock.png"
 
 
 function Events() {
+  const [isClicked, setIsClicked] = useState(false);
+  const toggleColor = () => {
+    setIsClicked(!isClicked);
+  };
     
-    return(
-        <div> 
+    return (
+      <div className={`new detail ${isClicked ? 'secondary' : 'primary'}`}>
+      <div className={`toggle-bar ${isClicked ? 'active' : ''}`} onClick={toggleColor}>
+        <div className="toggle-handle"></div>
+      </div>
             <h1 className='tweets'>EVENTS</h1>
-            
-    <div className='new detail'>
-       
-    <div className='event-container'>
+      <div className='event-container'>
       <h3 className='year'>2023</h3>
 
       <div className='event'>
@@ -178,7 +182,7 @@ function Events() {
 </div>
     </div>
     </div>
-    </div>
+   
     )
 }
 

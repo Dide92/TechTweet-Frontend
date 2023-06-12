@@ -26,18 +26,19 @@ function Register() {
     }   
     };
     return(
-    <div className='login'>
-        <span className='registerTitle'>Register</span>
-        <form className='registerForm' onSubmit={handleSubmit}>
-            <label>username</label>
+    <div className='new detail'>
+        <h1 style={{position:'relative', left:'2rem'}}>Register</h1>
+        <form onSubmit={handleSubmit}>
+            <label>Username:</label>
             <input type="text" placeholder='Enter your username' onChange={(e=>setUsername(e.target.value))}/>
-            <label>Email</label>
+            <label style={{position:'relative', marginRight:'2rem'}}>Email:</label>
             <input type="text" placeholder='Enter your email' onChange={(e=>setEmail(e.target.value))}/>
-            <label>Password</label>
+            <label>Password:</label>
             <input type="password" placeholder='Enter your password' onChange={(e=>setPassword(e.target.value))}/>
-            <button className='registerButton' type="submit" >Register</button>
+            <button className="button-27" role="button" type="submit" >Register</button><br></br><br></br>
+            <Link style={{textDecoration:'none', color:'white', textAlign:'left'}} to="/login">Click here to <span style={{color:'rgb(255, 128, 0)'}}>login</span></Link>
+
         </form>
-        <button className='loginButton'><Link to="/login">Login</Link></button>
         {error && <span>User exists, please login</span>}
     </div>
     )

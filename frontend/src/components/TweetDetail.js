@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams, useNavigate } from 'react-router-dom';
 import Linkedin from "../images/bluelinkedin.png"
 import Github from "../images/bluegithub.png"
+import Delete from "../images/delete.png"
+
 
 import { Context } from "./../context/Context";
 import { useContext } from 'react';
@@ -12,6 +14,7 @@ function TweetDetail({ tweets, handleDelete }) {
   const tweet = tweets?.find((tweet) => tweet._id === id);
   const navigate = useNavigate();
   const { user } = useContext(Context);
+  const [isClicked, setIsClicked] = useState(false);
 
   const deleteTweet = async (_id) => {
     try {
@@ -21,9 +24,16 @@ function TweetDetail({ tweets, handleDelete }) {
       console.error(err);
     }
   };
+  const toggleColor = () => {
+    setIsClicked(!isClicked);
+  };
 
   return (
-    <div className='new detail'>
+    <div className={`new detail ${isClicked ? 'secondary' : 'primary'}`}>
+      <div className={`toggle-bar ${isClicked ? 'active' : ''}`} onClick={toggleColor}>
+        <div className="toggle-handle"></div>
+      </div>
+      {/* <img src={Delete} style={{backgroundColor:'white'}} id='icon' onClick={handleClick}></img> */}
     <div key={tweet?._id}>
       <h1 className='tweetTitle'>{tweet?.title}</h1>
       <p>Author: {tweet?.username}</p><br></br>

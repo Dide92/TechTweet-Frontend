@@ -15,18 +15,20 @@ body {
   border-bottom: 1px solid #88fcdc;
   overflow:hidden;;
   box-shadow: 0px 1px 30px rgb(182, 231, 223);
-
+  padding-bottom:%;
 }
 .logoNav {
   padding-top:1rem;
   height:40px;
   width:40px;  
 }
+
 li {
   text-align: center;
   padding:3%;
   display:inline;
   list-style: none;
+  font-size:18px;
   color:white;
 }
 .navtext{
@@ -53,6 +55,7 @@ li {
   align-items:center;
   box-sizing:border-box;
   column-gap: 1%;
+  margin-bottom:4%;
 }
 .container1 {
   width:350px;
@@ -228,6 +231,12 @@ display:flex;
       opacity: 1;
     }
   }
+  h1{
+    text-align: center;
+    color:rgb(255, 128, 0);
+    font-size: 25px;
+
+  }
   .tweets {
     font-weight: 300;
     padding:2rem 0 0 3rem;
@@ -249,7 +258,7 @@ display:flex;
   }
 
   .grid-container--fit {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   
   .grid-element {
@@ -296,17 +305,7 @@ display:flex;
     text-align: center;
  
   }
-  /* @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blinking {
-    0% {border-color: transparent}
-    50% {border-color: white}
-    100% {border-color: transparent}
-  } */
-  
+
 
   
   /* buttons */
@@ -361,8 +360,8 @@ display:flex;
   
 }
 .show-image {
-  height:30%;
-  width:30%;
+  height:60%;
+  width:60%;
   border-radius:8%;
 }
 
@@ -394,49 +393,89 @@ textarea[name=description] {
   /* background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 36%, rgba(221,221,221,1) 61%, rgba(191,191,191,1) 86%, rgba(176,175,174,0.9122242647058824) 100%); */
 
 }
-.detail {
-  background-color:#001928;
-  color:white;
+
+form {
+  background-color: #001928;
+  color: white;
   width:40%;
   position:relative;
   left:30%;
   border-radius:8%;
-  padding:5rem 2rem;
+  padding:2rem;
+}
+form.white {
+  background-color:rgb(216, 215, 215);
+  color: black;
+}
+.detail {
+  --primary-background-color: #001928;
+  --secondary-background-color: rgb(216, 215, 215);
+  height: auto;
+  --primary-color: white;
+  --secondary-color: #001928;
+  width: 40%;
+  position: relative;
+  left: 30%;
+  border-radius: 8%;
+  padding: 5rem 2rem;
   margin-top: 2rem;
   overflow-y: scroll;
-  overflow-x:scroll;
-
-}
-.login {
-  width:40%;
-  margin-top: 2rem;
-  position:relative;
-  border-radius:8%;
-  background-color:#001928;
-  color:white;
-  margin-bottom:5%;
-  overflow-x:scroll;
-  left:30%;
-  padding:2rem;
-
-}
-.login input {
-  margin:2rem;
+  overflow-x: scroll;
 }
 
+.primary {
+  background-color: var(--primary-background-color);
+  color: var(--primary-color);
+}
+
+.secondary {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-color);
+}
+.toggle-bar {
+  background-color: var(--primary-background-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  text-align: center;
+  background-color: rgb(250, 176, 102);
+  border: 1px solid rgb(255, 128, 0);
+  /* display:inline; */
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.toggle-handle {
+  background-color: rgb(255, 128, 0);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-bar.active {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-color);
+}
+
+.toggle-bar.active .toggle-handle {
+  transform: translateX(30px);
+}
 .tweetDescription {
   margin:2rem;
   line-height: 150%;
 
 }
-form {
-  background-color:#001928;
-  width:40%;
-  position:relative;
-  left:30%;
-  border-radius:8%;
-  padding:2rem;
+label {
+  color: white;
+  text-align: left;
 }
+
+
 .textarea {
   box-sizing:border-box;
   margin:20px;
@@ -481,7 +520,7 @@ form {
 
 input {
   width:50%;
-  /* margin:20px; */
+  margin:20px;
   resize: vertical;
   padding:15px;
   border-radius:15px;
@@ -655,7 +694,29 @@ input {
   padding-top: 1%;
   left:90%;
 }
-.loginButton:disabled {
-  cursor:not-allowed;
-  background-color:coral;
+.publish {
+  background-image: url("./images/publish.png");
+  width:100vw;
+  height:350px;
+  color:white;
+  text-align: left;
+
+}
+.publish-div {
+  position:relative;
+  top:33%;
+  left:2rem;
+  font-size:25px;
+}
+
+.quote {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: 100;
+
+}
+
+
+#icon {
+  cursor:pointer;
 }
