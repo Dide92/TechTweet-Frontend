@@ -69,7 +69,6 @@ function NewTweet({ createTweet }) {
           name="username"
           value={tweetData.username}
           placeholder="Username"
-          onChange={handleChange}
         /><br></br>
         <input
           className='third-input'
