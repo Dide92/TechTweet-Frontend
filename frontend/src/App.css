@@ -754,6 +754,15 @@ input {
   }
   .login {
     width:1100px;
-    left:2rem;
+    left:10rem;
+  }
+  .login form {
+    width:300px;
+
+  }
+  .login input {
+    width:200px;
+    display:block;
+
   }
  }
