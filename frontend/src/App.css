@@ -720,3 +720,11 @@ input {
 #icon {
   cursor:pointer;
 }
+@media screen and (max-width: 1280px) {
+  .tech,
+  .tweet,
+  .logo {
+    position:relative;
+    left: 5rem;
+  }
+}
