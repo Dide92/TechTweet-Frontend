@@ -32,7 +32,7 @@ function Login() {
   };
 
   return (
-    <div className='new detail'>
+    <div className='login detail'>
       <h1 style={{position:'relative', left:'2rem'}}>Login</h1>
       {error && <p className="error-message">{error}</p>}
       <form  onSubmit={handleSubmit}>

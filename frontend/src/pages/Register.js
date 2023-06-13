@@ -26,7 +26,7 @@ function Register() {
     }   
     };
     return(
-    <div className='new detail'>
+    <div className='login detail'>
         <h1 style={{position:'relative', left:'2rem'}}>Register</h1>
         <form onSubmit={handleSubmit}>
             <label>Username:</label>
